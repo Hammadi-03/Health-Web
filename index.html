@@ -1,0 +1,213 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Medicalso | Health Website</title>
+
+  <!--Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">Medicalso</div>
+
+      <!-- mobile toggle -->
+      <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+
+      <nav class="nav" id="mainNav">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#doctors">Doctors</a>
+        <a href="#contact">Contact</a>
+        <button class="cta">Get Started</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="about">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <p class="kicker">4.7 | 3,460 Reviews</p>
+          <h1>A modern, safe and effective approach to well being</h1>
+          <p class="lead">Accessible doctors, smart scheduling and integrated wellness programs — everything in one place.</p>
+          <div class="hero-cta">
+            <a href="#" class="btn">Book now</a>
+            <a href="#" class="btn btn-outline">Learn more</a>
+          </div>
+
+          <ul class="stats">
+            <li><strong data-target="98">0</strong><span>Satisfaction</span></li>
+            <li><strong data-target="30">0</strong><span>Years</span></li>
+            <li><strong data-target="1000">0</strong><span>Patients</span></li>
+            <li><strong data-target="80">0</strong><span>Experts</span></li>
+          </ul>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-card">
+            <img src="assets/doctor-1.jpg" alt="Doctor" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision & Features -->
+    <section class="vision container">
+      <div class="vision-grid">
+        <div class="vision-left">
+          <h2>Finding health solutions with top Experts</h2>
+          <p>We focus on patient-centred care and innovative health solutions for long-term wellbeing.</p>
+          <a href="#" class="btn btn-small">About Us</a>
+        </div>
+
+        <div class="vision-right">
+          <ul class="feature-list">
+            <li><h3>Patient-Centered Care</h3><p>We prioritise patient needs and personalised treatment.</p></li>
+            <li><h3>Innovative Health Solutions</h3><p>Cutting-edge technology and research-backed methods.</p></li>
+            <li><h3>Holistic Wellness</h3><p>Care for both physical and mental wellbeing.</p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services container">
+      <h3 class="section-title">Different types of department we have for your healthcare</h3>
+      <div class="cards-grid">
+        <article class="card"><h4>Pediatrics</h4><p>Ensure your child's growth and development at every stage.</p></article>
+        <article class="card"><h4>Orthopedics</h4><p>Restore mobility and relieve musculoskeletal pain.</p></article>
+        <article class="card"><h4>Gastroenterology</h4><p>Digestive system care and treatments.</p></article>
+        <article class="card"><h4>Neurology</h4><p>Brain and nerve health diagnostics and treatment.</p></article>
+        <article class="card"><h4>Cardiology</h4><p>Heart health and cardiovascular care.</p></article>
+        <article class="card"><h4>General Care</h4><p>Everyday health assessments and medical advice.</p></article>
+      </div>
+    </section>
+
+    <!-- Telemedicine & Wellness Blocks -->
+    <section class="secondary container">
+      <div class="secondary-grid">
+        <div class="feature-block">
+          <small>Virtual Care</small>
+          <h4>Comprehensive Telemedicine Services</h4>
+          <ul>
+            <li>Virtual consultations from home</li>
+            <li>Remote vital signs monitoring</li>
+            <li>24/7 support</li>
+          </ul>
+          <a href="#" class="btn btn-small">Learn more</a>
+        </div>
+
+        <div class="feature-block image-block">
+          <img src="assets/child-1.jpg" alt="Wellness" />
+          <div class="mini-form">
+            <label>Health stats</label>
+            <div class="mini-row">
+              <span>BP</span><strong>120/80</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Doctors -->
+    <section id="doctors" class="doctors container">
+      <h3 class="section-title">Meet our expert medical team</h3>
+      <div class="doctors-grid">
+        <figure class="doc">
+          <img src="assets/doc1.jpg" alt="Jonathan Reed" />
+          <figcaption>
+            <strong>Jonathan Reed</strong>
+            <span>Cardiologist</span>
+          </figcaption>
+        </figure>
+        <figure class="doc">
+          <img src="assets/doc2.jpg" alt="Olivia Bennett" />
+          <figcaption>
+            <strong>Olivia Bennett</strong>
+            <span>Neurologist</span>
+          </figcaption>
+        </figure>
+        <figure class="doc">
+          <img src="assets/doc3.jpg" alt="David Harris" />
+          <figcaption>
+            <strong>David Harris</strong>
+            <span>Paediatrician</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="testimonial container">
+      <div class="testimonial-card" id="testimonialCard">
+        <img src="assets/elderly.jpg" alt="Patient" />
+        <div class="testimonial-body">
+          <p class="quote" id="testimonialQuote">"A calmness fills my soul, like the peaceful mornings of spring. The care here has truly transformed my life."</p>
+          <p class="who" id="testimonialWho">— Johnathan, Diabetes Patient</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog / Articles -->
+    <section class="articles container">
+      <h3 class="section-title">Read our articles and find answers to questions</h3>
+      <div class="articles-grid">
+        <article class="post">
+          <img src="assets/article1.jpg" alt="" />
+          <h4>The Benefits of Regular Exercise</h4>
+          <p class="meta">Sep 4, 2024</p>
+        </article>
+        <article class="post">
+          <img src="assets/article2.jpg" alt="" />
+          <h4>Managing Stress for Better Health</h4>
+          <p class="meta">Sep 5, 2024</p>
+        </article>
+        <article class="post">
+          <img src="assets/article3.jpg" alt="" />
+          <h4>The Impact of Sleep on Your Health</h4>
+          <p class="meta">Sep 16, 2024</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA + Subscribe -->
+    <section class="cta-block container" id="contact">
+      <div class="cta-inner">
+        <h3>Ready to take care of your health and future?</h3>
+        <a class="btn" href="#">Start Now</a>
+        <form id="subscribeForm" class="subscribe-form" novalidate>
+          <input type="email" id="subEmail" placeholder="name@email.com" required />
+          <button type="submit" class="btn btn-small">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Mediso</h4>
+        <p>Creative healthcare template to launch your site quickly and easily.</p>
+      </div>
+      <div>
+        <h5>Pages</h5>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <p>email@mediso.example</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
