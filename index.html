@@ -1,7 +1,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Medicalso | Health Website</title>
+  <title>Mediclo | Health Website</title>
 
   <!--Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -10,22 +10,28 @@
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">Medicalso</div>
+ <header class="site-header">
+  <div class="container header-inner">
+    <!-- logo now a clickable link to the hero/top -->
+    <a href="index.html" class="brand-link" aria-label="Go to home">
+  <p class="framer-text logo-text">
+    Mediclo
+  </p>
+</a>
 
-      <!-- mobile toggle -->
-      <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <!-- mobile toggle -->
+    <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
 
-      <nav class="nav" id="mainNav">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#doctors">Doctors</a>
-        <a href="#contact">Contact</a>
-        <button class="cta">Get Started</button>
-      </nav>
-    </div>
-  </header>
+    <nav class="nav" id="mainNav">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#doctors">Doctors</a>
+      <a href="contact.html">Careers</a>
+      <button class="cta">Get Started</button>
+    </nav>
+  </div>
+</header>
+
 
   <main>
     <!-- Hero -->

@@ -19,7 +19,7 @@
   color: #0f1724;
 }
 
-/* reset */
+
 *,:before,:after{box-sizing:inherit}
 html,body{height:100%}
 body{
@@ -31,6 +31,11 @@ body{
   color: #0f1724;
   -webkit-font-smoothing:antialiased;
 }
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 
 /* container */
 .container{
@@ -46,16 +51,18 @@ body{
   top:0;
   z-index:200;
   backdrop-filter: blur(6px);
+  text-decoration:none;
 }
 .header-inner{
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:var(--gap);
+  text-decoration:none;
 }
 .brand{font-weight:800; color:var(--accent); font-size:20px; letter-spacing:0.2px}
 .nav a{margin:0 14px; color:var(--muted-2); text-decoration:none; font-weight:500}
-.nav .cta{background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#fff; padding:12px 16px; border-radius:12px; border:none; cursor:pointer; box-shadow:0 8px 22px rgba(107,92,230,0.18)}
+.nav .cta{background:#2b446c;color: #eef0f7; padding:12px 16px; border-radius:12px; border:none; cursor:pointer;}
 .nav a:hover{color:#222}
 
 /* mobile nav toggle */
@@ -66,6 +73,7 @@ body{
   font-size:22px;
   cursor:pointer;
   color:var(--muted-2);
+  text-decoration:none;
 }
 
 /* hero */
@@ -256,4 +264,46 @@ h1{
   .footer-grid{flex-direction:column; gap:12px}
   .hero-right{order:2}
   .hero-left{order:1}
+}
+
+/* clickable brand */
+.brand {
+  display: inline-block;
+  text-decoration: none!important;
+  color:#0f1724;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.2px;
+}
+.brand:focus,
+.brand:hover {
+  text-decoration: none;
+  opacity: 0.92;
+  transform: translateY(-1px);
+  transition: transform .18s ease, opacity .18s ease;
+}
+
+/* logo link reset */
+.brand-link {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* framer-style logo text */
+.logo-text {
+  font-family: "Poppins", "Satoshi", sans-serif;
+  font-size: 26px;
+  font-weight: 700;   /* stronger than Framer for web */
+  letter-spacing: -0.03em;
+  color: rgb(0, 53, 136);
+  margin: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* hover animation like Framer */
+.logo-text:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
 }
