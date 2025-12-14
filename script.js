@@ -1,15 +1,14 @@
-// Basic site interactions: nav toggle, smooth scroll, stats counter, testimonial carousel, subscribe form.
-// Enhancements: reveal-on-scroll and simple parallax tilt for hero image.
+
 document.addEventListener('DOMContentLoaded', () => {
 
-  // NAV TOGGLE (mobile)
+ 
   const navToggle = document.getElementById('navToggle');
   const mainNav = document.getElementById('mainNav');
   navToggle?.addEventListener('click', () => {
     mainNav.classList.toggle('open');
   });
 
-  // SMOOTH SCROLL for anchor links
+
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
@@ -22,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // STATS COUNTER (animates once when visible)
+
   const counters = document.querySelectorAll('.stats strong[data-target]');
   const counterObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -44,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.4 });
   counters.forEach(c => counterObserver.observe(c));
 
-  // SIMPLE TESTIMONIAL CAROUSEL (rotates text)
+ 
   const testimonials = [
     { quote: '"A calmness fills my soul... The care here has truly transformed my life."', who: '— Johnathan, Diabetes Patient' },
     { quote: '"Excellent care and fast response times. Highly recommended."', who: '— Aisha, Mother & Patient' },
@@ -60,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   setInterval(rotateTestimonials, 4500); // every 4.5s
 
-  // SUBSCRIBE FORM (basic validation + friendly message)
   const subscribeForm = document.getElementById('subscribeForm');
   const subEmail = document.getElementById('subEmail');
   subscribeForm?.addEventListener('submit', (e) => {
@@ -71,12 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
       subEmail.focus();
       return;
     }
-    // simulate success (for competition demo you can replace this with real API)
     alert('Thanks — you are subscribed! (Demo)');
     subscribeForm.reset();
   });
 
-  // REVEAL ON SCROLL (add .visible when element enters view)
   const revealEls = document.querySelectorAll('.reveal, .card, .feature-block, .post, .doc, .vision-left');
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -88,19 +84,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.15 });
   revealEls.forEach(el => revealObserver.observe(el));
 
-  // Add 'reveal' class to common blocks (so CSS animation applies)
   document.querySelectorAll('.card, .feature-block, .post, .doc, .vision-left, .hero-right .hero-card').forEach(el => {
     if (!el.classList.contains('reveal')) el.classList.add('reveal');
   });
 
-  // Simple small parallax tilt for hero card on mouse move
   const heroCard = document.querySelector('.hero-right .hero-card');
   if (heroCard) {
     heroCard.addEventListener('mousemove', (e) => {
       const r = heroCard.getBoundingClientRect();
       const px = (e.clientX - r.left) / r.width;
       const py = (e.clientY - r.top) / r.height;
-      const rx = (py - 0.5) * 6; // tilt range
+      const rx = (py - 0.5) * 6; 
       const ry = (px - 0.5) * -8;
       heroCard.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
     });
