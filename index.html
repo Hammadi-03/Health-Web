@@ -1,227 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mediclo | Health Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mediclo - Modern Healthcare</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <!--Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: #000;
+        }
 
-  <!--AOS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1e5ab8 0%, #2667c9 50%, #4d88db 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
 
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 50px;
+        }
 
-  <link rel="stylesheet" href="style.css" />
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .logo-icon {
+            width: 35px;
+            height: 35px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        nav a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-btn {
+            background: rgba(255,255,255,0.15);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .lang-select {
+            background: rgba(255,255,255,0.9);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .settings-icon {
+            width: 35px;
+            height: 35px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+        }
+
+        .getting-started-btn {
+            background: white;
+            color: #1e5ab8;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .register-btn {
+            background: #000;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            padding: 40px 50px;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-left h1 {
+            color: white;
+            font-size: 72px;
+            line-height: 1.1;
+            font-weight: 400;
+            margin-bottom: 50px;
+        }
+
+        .hero-left h1 .modern {
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        .hero-left h1 .safe {
+            color: #c8ff00;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .hero-left h1 .effective {
+            color: #7fdb4d;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .hero-left h1 .star-box {
+            display: inline-flex;
+            background: #ffd700;
+            width: 60px;
+            height: 60px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 35px;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+
+        .hero-center {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            position: relative;
+        }
+
+        .doctor-circle {
+            width: 450px;
+            height: 450px;
+            background: rgba(100, 150, 220, 0.3);
+            border-radius: 50%;
+            position: absolute;
+            bottom: -50px;
+        }
+
+        .doctor-img {
+            position: relative;
+            z-index: 2;
+            width: 400px;
+            height: auto;
+        }
+
+        .hero-right {
+            padding: 20px;
+        }
+
+        .rating-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .stars {
+            display: flex;
+            gap: 3px;
+        }
+
+        .star {
+            color: #ffd700;
+            font-size: 18px;
+        }
+
+        .rating-text {
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            border-left: 2px solid rgba(255,255,255,0.3);
+            padding-left: 10px;
+        }
+
+        .hero-description {
+            color: rgba(255,255,255,0.9);
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .book-btn {
+            background: rgba(100, 120, 255, 0.8);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 30px;
+        }
+
+        .doctors-widget {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            border: 3px solid #a855f7;
+            position: relative;
+        }
+
+        .doctors-widget h3 {
+            font-size: 15px;
+            margin-bottom: 80px;
+            color: #333;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid #ddd;
+            padding: 8px 15px;
+            border-radius: 8px;
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            flex: 1;
+            font-size: 13px;
+            color: #999;
+        }
+
+        .dimension-badge {
+            position: absolute;
+            bottom: -15px;
+            right: 20px;
+            background: #a855f7;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            padding: 30px 50px;
+            margin-top: 50px;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.95);
+            padding: 35px 30px;
+            border-radius: 16px;
+            text-align: left;
+        }
+
+        .stat-number {
+            font-size: 56px;
+            font-weight: 700;
+            color: #1e5ab8;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .stat-divider {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: #1e5ab8;
+            font-weight: 300;
+        }
+    </style>
 </head>
-
 <body>
- <header class="site-header">
-  <div class="container header-inner">
-    <!-- logo now a clickable link to the hero/top -->
-    <a href="index.html" class="brand-link" aria-label="Go to home">
-  <p class="framer-text logo-text">
-    Mediclo
-  </p>
-</a>
-
-    <!-- mobile toggle -->
-    <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
-
-    <nav class="nav" id="mainNav">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#doctors">Doctors</a>
-      <a href="contact.html">Careers</a>
-      <button class="cta">Get Started</button>
-    </nav>
-  </div>
-</header>
-
-
-  <main>
-    <!-- Hero -->
-    <section class="hero" id="about">
-      <div class="container hero-grid">
-        <div class="hero-left">
-          <p class="kicker">4.7 | 3,460 Reviews</p>
-          <h1>A modern, safe and effective approach to well being</h1>
-          <p class="lead">Accessible doctors, smart scheduling and integrated wellness programs — everything in one place.</p>
-          <div class="hero-cta">
-            <a href="#" class="btn">Book now</a>
-            <a href="#" class="btn btn-outline">Learn more</a>
-          </div>
-
-          <ul class="stats">
-            <li><strong data-target="98">0</strong><span>Satisfaction</span></li>
-            <li><strong data-target="30">0</strong><span>Years</span></li>
-            <li><strong data-target="1000">0</strong><span>Patients</span></li>
-            <li><strong data-target="80">0</strong><span>Experts</span></li>
-          </ul>
-        </div>
-
-        <div class="hero-right">
-          <div class="hero-card">
-            <img src="assets/doctor-1.jpg" alt="Doctor" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Vision & Features -->
-    <section class="vision container">
-      <div class="vision-grid">
-        <div class="vision-left">
-          <h2>Finding health solutions with top Experts</h2>
-          <p>We focus on patient-centred care and innovative health solutions for long-term wellbeing.</p>
-          <a href="#" class="btn btn-small">About Us</a>
-        </div>
-
-        <div class="vision-right">
-          <ul class="feature-list">
-            <li><h3>Patient-Centered Care</h3><p>We prioritise patient needs and personalised treatment.</p></li>
-            <li><h3>Innovative Health Solutions</h3><p>Cutting-edge technology and research-backed methods.</p></li>
-            <li><h3>Holistic Wellness</h3><p>Care for both physical and mental wellbeing.</p></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services -->
-    <section id="services" class="services container">
-      <h3 class="section-title">Different types of department we have for your healthcare</h3>
-      <div class="cards-grid">
-        <article class="card"><h4>Pediatrics</h4><p>Ensure your child's growth and development at every stage.</p></article>
-        <article class="card"><h4>Orthopedics</h4><p>Restore mobility and relieve musculoskeletal pain.</p></article>
-        <article class="card"><h4>Gastroenterology</h4><p>Digestive system care and treatments.</p></article>
-        <article class="card"><h4>Neurology</h4><p>Brain and nerve health diagnostics and treatment.</p></article>
-        <article class="card"><h4>Cardiology</h4><p>Heart health and cardiovascular care.</p></article>
-        <article class="card"><h4>General Care</h4><p>Everyday health assessments and medical advice.</p></article>
-      </div>
-    </section>
-
-    <!-- Telemedicine & Wellness Blocks -->
-    <section class="secondary container">
-      <div class="secondary-grid">
-        <div class="feature-block">
-          <small>Virtual Care</small>
-          <h4>Comprehensive Telemedicine Services</h4>
-          <ul>
-            <li>Virtual consultations from home</li>
-            <li>Remote vital signs monitoring</li>
-            <li>24/7 support</li>
-          </ul>
-          <a href="#" class="btn btn-small">Learn more</a>
-        </div>
-
-        <div class="feature-block image-block">
-          <img src="assets/child-1.jpg" alt="Wellness" />
-          <div class="mini-form">
-            <label>Health stats</label>
-            <div class="mini-row">
-              <span>BP</span><strong>120/80</strong>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">❤️</div>
+                <span>Mediclo</span>
             </div>
-          </div>
+            <nav>
+                <a href="#">About us</a>
+                <a href="#">Services</a>
+                <a href="#">Doctors</a>
+                <a href="#">Book an Appointment</a>
+                <button class="contact-btn">Contact us</button>
+            </nav>
+            <div class="header-right">
+                <select class="lang-select">
+                    <option>🌐 EN</option>
+                </select>
+                <div class="settings-icon">⚙️</div>
+                <button class="getting-started-btn">Getting Started</button>
+                <button class="register-btn">Register</button>
+            </div>
+        </header>
+
+        <div class="hero">
+            <div class="hero-left">
+                <h1>
+                    A <span class="modern">modern</span> ↗<br>
+                    <span class="safe">safe</span><br>
+                    and <span class="effective">effective</span><br>
+                    approach to well<br>
+                    being <span class="star-box">⭐</span>
+                </h1>
+            </div>
+
+            <div class="hero-center">
+                <div class="doctor-circle"></div>
+                <img src="asset/img/hero.jpg" alt="Doctor" class="doctor-img">
+            </div>
+
+            <div class="hero-right">
+                <div class="rating-box">
+                    <div class="stars">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <span class="rating-text">8.9 | 3,460 Reviews</span>
+                </div>
+
+                <p class="hero-description">
+                    Rerembelang medical expertise with a modern approach. ULTHERA is building a healthcare ecosystem that meets today's needs. We leverage technology to create practical, efficient, and accessible services, while maintaining professional standards, data security, and the accuracy of health information for every user.
+                </p>
+
+                <button class="book-btn">Book an Appointment</button>
+
+                <div class="doctors-widget">
+                    <h3>Available Doctors Today</h3>
+                    <div class="search-box">
+                        <span>🔍</span>
+                        <input type="text" placeholder="Available Doctors Today">
+                    </div>
+                    <div class="dimension-badge">423 × 337</div>
+                </div>
+            </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Doctors -->
-    <section id="doctors" class="doctors container">
-      <h3 class="section-title">Meet our expert medical team</h3>
-      <div class="doctors-grid">
-        <figure class="doc">
-          <img src="assets/doc1.jpg" alt="Jonathan Reed" />
-          <figcaption>
-            <strong>Jonathan Reed</strong>
-            <span>Cardiologist</span>
-          </figcaption>
-        </figure>
-        <figure class="doc">
-          <img src="assets/doc2.jpg" alt="Olivia Bennett" />
-          <figcaption>
-            <strong>Olivia Bennett</strong>
-            <span>Neurologist</span>
-          </figcaption>
-        </figure>
-        <figure class="doc">
-          <img src="assets/doc3.jpg" alt="David Harris" />
-          <figcaption>
-            <strong>David Harris</strong>
-            <span>Paediatrician</span>
-          </figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- Testimonial -->
-    <section class="testimonial container">
-      <div class="testimonial-card" id="testimonialCard">
-        <img src="assets/elderly.jpg" alt="Patient" />
-        <div class="testimonial-body">
-          <p class="quote" id="testimonialQuote">"A calmness fills my soul, like the peaceful mornings of spring. The care here has truly transformed my life."</p>
-          <p class="who" id="testimonialWho">— Johnathan, Diabetes Patient</p>
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Satisfaction rate</div>
+            </div>
+            <div class="stat-divider">•</div>
+            <div class="stat-card">
+                <div class="stat-number">40<sup>+</sup></div>
+                <div class="stat-label">Year of experience</div>
+            </div>
+            <div class="stat-divider">•</div>
+            <div class="stat-card">
+                <div class="stat-number">1000<sup>+</sup></div>
+                <div class="stat-label">Patients Treated</div>
+            </div>
+            <div class="stat-divider">•</div>
+            <div class="stat-card">
+                <div class="stat-number">80</div>
+                <div class="stat-label">Expert Doctors</div>
+            </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Blog / Articles -->
-    <section class="articles container">
-      <h3 class="section-title">Read our articles and find answers to questions</h3>
-      <div class="articles-grid">
-        <article class="post">
-          <img src="assets/article1.jpg" alt="" />
-          <h4>The Benefits of Regular Exercise</h4>
-          <p class="meta">Sep 4, 2024</p>
-        </article>
-        <article class="post">
-          <img src="assets/article2.jpg" alt="" />
-          <h4>Managing Stress for Better Health</h4>
-          <p class="meta">Sep 5, 2024</p>
-        </article>
-        <article class="post">
-          <img src="assets/article3.jpg" alt="" />
-          <h4>The Impact of Sleep on Your Health</h4>
-          <p class="meta">Sep 16, 2024</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- CTA + Subscribe -->
-    <section class="cta-block container" id="contact">
-      <div class="cta-inner">
-        <h3>Ready to take care of your health and future?</h3>
-        <a class="btn" href="#">Start Now</a>
-        <form id="subscribeForm" class="subscribe-form" novalidate>
-          <input type="email" id="subEmail" placeholder="name@email.com" required />
-          <button type="submit" class="btn btn-small">Subscribe</button>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <h4>Mediso</h4>
-        <p>Creative healthcare template to launch your site quickly and easily.</p>
-      </div>
-      <div>
-        <h5>Pages</h5>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Contact</h5>
-        <p>email@mediso.example</p>
-      </div>
     </div>
-  </footer>
-
-  <script>
-  AOS.init();
-</script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="script.js" defer></script>
 </body>
 </html>
