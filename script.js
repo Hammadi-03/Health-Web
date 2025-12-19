@@ -22,5 +22,6 @@ const trackPrevious = (el) => {
 }
 
 
-
 trackPrevious(switcher);
+
+
